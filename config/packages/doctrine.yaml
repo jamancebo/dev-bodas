@@ -1,0 +1,16 @@
+doctrine:
+    dbal:
+        url: 'mysql://bodas:bodas@db-bodas:3306/dev_bodas?serverVersion=8.0.27'
+        types:
+            IdType: DevBodas\Dev\Infrastructure\Repository\Persistence\Doctrine\CustomType\IdType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            DevBodas\Dev\Domain:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Dev/Infrastructure/Repository/Persistence/Doctrine/Entity'
+                prefix: 'DevBodas\Dev\Domain\Entity'
+                alias: DevBodas

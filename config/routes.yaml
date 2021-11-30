@@ -1,7 +1,12 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
+home:
+  path: /home
+  controller: DevBodas\Dev\Infrastructure\EntryPoint\Controller\Homepage
 
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+#Controlers
+
+post_simulator:
+  path: /{version}/simulator
+  controller: DevBodas\Dev\Infrastructure\EntryPoint\Controller\PostSimulator
+  methods: POST
+  requirements:
+    version: v1

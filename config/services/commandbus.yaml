@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  DevBodas\Shared\Domain\Bus\CommandBus:
+    class: 'DevBodas\Shared\Infrastructure\Bus\TacticianCommandBus'
+
+  DevBodas\Dev\Application\Command\Handler\CreateSimulatorHandler:
+    tags:
+      - { name: tactician.handler, command: DevBodas\Dev\Application\Command\CreateSimulator, bus: default }
